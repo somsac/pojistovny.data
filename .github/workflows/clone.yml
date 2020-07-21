@@ -21,7 +21,5 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       
-    - run: git config --local user.email "milan.somsedik@gmail.com"
-    - run: git config --local user.name "Milan Somsedik"
-    - run: git add .
+    
     - run: git status
