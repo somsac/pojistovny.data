@@ -24,9 +24,13 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
      
-    - run: git config --local user.email "milan.somsedik@gmail.com"
-    - run: git config --local user.name "Milan Somsedik"
-    - run: git status
-    - run: git remote set-url origin https://somsac@github.com/somsac/pojistovny.data.git
-    - run: git subtree push --prefix=main https://somsac:${{secrets.PASS}}@github.com/somsac/pojistovny.data.beta master
+    - name: Pushes to another repository
+      uses: cpina/github-action-push-to-another-repository@master
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source-directory: 'main'
+        destination-github-username: 'somsac'
+        destination-repository-name: 'pojistovny.data.beta'
+        user-email: milan.somsedik@gmail.com
  
