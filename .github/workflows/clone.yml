@@ -21,9 +21,4 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       
-    - run: git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/somsac/pojistovny.data.beta target
-    - run: rm target
-    - run: copy main target
-    - run: git add target
-    - run: git commit -m "Automatic publish"
-    - run: git push target master
+    - run: git subtree push --prefix=main https://github.com/somsac/pojistovny.data.beta master
