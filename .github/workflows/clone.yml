@@ -27,5 +27,6 @@ jobs:
     - run: git config --local user.email "milan.somsedik@gmail.com"
     - run: git config --local user.name "Milan Somsedik"
     - run: git status
+    - run: git remote set-url origin https://somsac@github.com/somsac/pojistovny.data.beta.git
     - run: git subtree push --prefix=main https://.:${{secrets.API_TOKEN_GITHUB}}@github.com/somsac/pojistovny.data.beta master
  
