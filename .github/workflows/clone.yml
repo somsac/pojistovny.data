@@ -27,5 +27,5 @@ jobs:
     - run: git config --local user.email "milan.somsedik@gmail.com"
     - run: git config --local user.name "Milan Somsedik"
     - run: git status
-    - run: git subtree push --prefix=main https://drsnak:${{secrets.API_TOKEN_GITHUB}}@github.com/somsac/pojistovny.data.beta master
+    - run: git subtree push --prefix=main https://somsac:${{secrets.API_TOKEN_GITHUB}}@github.com/somsac/pojistovny.data.beta master
  
