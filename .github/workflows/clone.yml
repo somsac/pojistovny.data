@@ -21,4 +21,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       
-    - run: git subtree push --prefix=main https://github.com/somsac/pojistovny.data.beta master
+    - name: Push directory to another repository
+      uses: cpina/github-action-push-to-another-repository@v1.1
+      with:
+        # Source directory from the origin directory
+        source-directory: 'main'
+        # Name of the destination username/organization
+        destination-github-username: 'somsac'
+        # Destination repository
+        destination-repository-name: 'pojistovny.data.beta'
+        # Email for the git commit
+        user-email: 'milan.somsedik@gmail.com'
