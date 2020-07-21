@@ -21,16 +21,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       
-    - name: Push directory to another repository
-      uses: cpina/github-action-push-to-another-repository@v1.1
+    - name: Copy via ssh
+      uses: garygrossgarten/github-action-scp@v0.6.0
       env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        # Source directory from the origin directory
-        source-directory: 'main'
-        # Name of the destination username/organization
-        destination-github-username: 'somsac'
-        # Destination repository
-        destination-repository-name: 'pojistovny.data.beta'
-        # Email for the git commit
-        user-email: 'milan.somsedik@gmail.com'
+        # Path to the local folder you want to copy.
+        local: main
+        # Path on the remote server to copy to.
+        remote: https://github.com/somsac/pojistovny.data.beta
