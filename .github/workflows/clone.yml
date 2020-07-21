@@ -21,12 +21,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       
-    - name: Copy via ssh
-      uses: garygrossgarten/github-action-scp@v0.6.0
+    - uses: actions/checkout@master
+    - name: publish:starters
+      uses: johno/actions-push-subdirectories@master
       env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        # Path to the local folder you want to copy.
-        local: main
-        # Path on the remote server to copy to.
-        remote: https://github.com/somsac/pojistovny.data.beta
+        args: main somsac pojistovny.data.beta
