@@ -22,5 +22,5 @@ jobs:
     steps:
       
     - run: git clone -b develop --single-branch https://github.com/somsac/pojistovny.data.beta.git
-    - run: git remote set-url origin https://github.com/somsac/pojistovny.data.beta.git
+    - run: git remote set-url origin https://github.com/somsac/pojistovny.data.beta
     - run: git push -u origin develop
