@@ -31,6 +31,6 @@ jobs:
       with:
         source-directory: 'main'
         destination-github-username: 'somsac'
-        destination-repository-name: 'pojistovny.data.beta'
+        destination-repository-name: 'pojistovny.data.beta/main'
         user-email: milan.somsedik@gmail.com
  
