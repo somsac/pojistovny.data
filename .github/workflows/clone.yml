@@ -22,3 +22,4 @@ jobs:
     steps:
       
     - run: git clone -b develop --single-branch https://github.com/somsac/pojistovny.data.beta.git
+    - run: git push https://github.com/somsac/pojistovny.data.beta.git
