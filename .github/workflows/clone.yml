@@ -21,6 +21,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       
-    - run: git clone -b develop --single-branch https://github.com/somsac/pojistovn.data.beta.git
-    - run: git remote set-url origin https://github.com/somsac/pojistovny.data.beta
+    - run: git clone -b develop --single-branch https://github.com/somsac/pojistovny.data.beta.git
+    - run: cd set-url pojistovny.data.beta
     - run: git push -u origin develop
