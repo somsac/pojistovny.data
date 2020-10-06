@@ -13,8 +13,9 @@ archive.finalize();
 
 fs.readFile('main/data.json', (err, data) => {
   let pojistovny = JSON.parse(data);
-  for (pojistovna in pojistovny.data) {
-    console.log(pojistovna);
+  for (index in pojistovny.data) {
+    var pojistovna = pojistovny.data[index];
+    console.log(pojistovna.logo);
   }
 });
 
