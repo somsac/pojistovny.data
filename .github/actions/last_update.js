@@ -1,11 +1,11 @@
 var fs = require('fs');
-var archiver = require('archiver');
+var archiver = require('jszip');
 var date = new Date();
 
-var zip = archiver('zip');
+/*var zip = archiver('zip');
 zip.pipe('main/update.zip')
 zip.append('main/update.json')
-zip.finalize();
+zip.finalize();*/
 
 fs.writeFile('main/update.json', '{"update":"' + date.toISOString() + '"}', function (err) {
   if (err) throw err;
