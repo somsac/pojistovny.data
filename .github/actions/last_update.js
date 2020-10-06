@@ -1,11 +1,11 @@
 var fs = require('fs');
-var JSZip = require('./jszip');
+//var JSZip = require('./jszip');
 var date = new Date();
 
-var zip = new JSZip();
-zip.file('main/update.json')
+var zip = new AdmZip();
+/*zip.file('main/update.json')
 zip.generateNodeStream({type:'nodebuffer',streamFiles:true})
-   .pipe(fs.createWriteStream('main/update.zip'))
+   .pipe(fs.createWriteStream('main/update.zip'))  */
 
 /*var zip = archiver('zip');
 zip.pipe('main/update.zip')
