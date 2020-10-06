@@ -1,7 +1,15 @@
 var fs = require('fs');
 //var JSZip = require('./jszip');
 var date = new Date();
-var archiver = require('archiver');
+const archiver = require('archiver');
+
+var output = fs.createWriteStream('main/example.zip');
+var archive = archiver('zip', {
+  zlib: { level: 9 } 
+});
+archive.pipe(output);
+archive.file('main/update.json', { name: 'file4.txt' });
+archive.finalize();
 
 /*var zip = new JSZip()
 var data = fs.readFile('main/update.json')
