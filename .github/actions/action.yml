@@ -2,4 +2,6 @@ name: last_update
 runs:
   using: node12 # Runtime Environment
   main: last_update.js # Script to run, path is relative
+runs:
+  using: node12 # Runtime Environment
   main: last_update2.js
