@@ -1,4 +1,0 @@
-name: zip  
-runs:
-  using: node12 # Runtime Environment
-  main: last_update2.js
