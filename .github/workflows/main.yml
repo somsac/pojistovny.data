@@ -23,7 +23,9 @@ jobs:
     
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - uses: ./.github/actions
+    #- uses: ./.github/actions
+
+    - run: ./.github/actions/last_update.js
     
 
     - run: git config --local user.email "milan.somsedik@gmail.com"
