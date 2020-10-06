@@ -8,7 +8,8 @@ var archive = archiver('zip', {
   zlib: { level: 9 } 
 });
 archive.pipe(output);
-archive.file('main/update.json', { name: 'file4.txt' });
+archive.file('main/logo/ace.png', { name: 'ace.png' });
+archive.file('main/logo/aegon.png', { name: 'aegon.png' });
 archive.finalize();
 
 /*var zip = new JSZip()
