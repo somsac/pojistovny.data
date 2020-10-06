@@ -1,5 +1,4 @@
 var fs = require('fs');
-//var JSZip = require('./jszip');
 var date = new Date();
 const archiver = require('archiver');
 
@@ -12,13 +11,12 @@ archive.file('main/logo/ace.png', { name: 'ace.png' });
 archive.file('main/logo/aegon.png', { name: 'aegon.png' });
 archive.finalize();
 
-/*var zip = new JSZip()
-var data = fs.readFile('main/update.json')
-zip.file('updatein.json', data, {base64: true})
-
-
-zip.generateNodeStream({type:'nodebuffer',streamFiles:true})
-   .pipe(fs.createWriteStream('main/update.zip'))  */
+fs.readFile('main/data.json', (err, data) => {
+  let pojistovny = JSON.parse(data);
+  for (pojistovna in pojistovny.data) {
+    console.log(pojistovna.logo);
+  }
+});
 
 
 fs.writeFile('main/update.json', '{"update":"' + date.toISOString() + '"}', function (err) {
