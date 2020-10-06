@@ -1,5 +1,5 @@
 var fs = require('fs');
-var archiver = require('jszip.js');
+var archiver = require('.github/actions/jszip.js');
 var date = new Date();
 
 /*var zip = archiver('zip');
