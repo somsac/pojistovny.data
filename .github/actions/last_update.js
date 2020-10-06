@@ -1,16 +1,15 @@
 var fs = require('fs');
-//var JSZip = require('./jszip');
+var JSZip = require('./jszip');
 var date = new Date();
 
-var zip = new AdmZip();
-/*zip.file('main/update.json')
-zip.generateNodeStream({type:'nodebuffer',streamFiles:true})
-   .pipe(fs.createWriteStream('main/update.zip'))  */
+var zip = new JSZip()
+var data = fs.readFile('main/update.json')
+zip.file('updatein.json', data, {base64: true})
 
-/*var zip = archiver('zip');
-zip.pipe('main/update.zip')
-zip.append('main/update.json')
-zip.finalize();*/
+
+zip.generateNodeStream({type:'nodebuffer',streamFiles:true})
+   .pipe(fs.createWriteStream('main/update.zip'))  
+
 
 fs.writeFile('main/update.json', '{"update":"' + date.toISOString() + '"}', function (err) {
   if (err) throw err;
