@@ -19,9 +19,9 @@ fs.readFile('main/data.json', (err, data) => {
     archive.file('main/logo/' + pojistovna.logo, { name: pojistovna.logo });
   //  console.log(pojistovna.logo);
   }
-});
 
-archiveAll.finalize();
+  archiveAll.finalize();
+});
 
 
 fs.writeFile('main/update.json', '{"update":"' + date.toISOString() + '"}', function (err) {
