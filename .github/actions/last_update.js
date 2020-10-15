@@ -15,7 +15,7 @@ fs.readFile('main/data.json', (err, data) => {
   archiveAll.pipe(outputAll);
 
   var outputAuto = fs.createWriteStream('main/' + zip_name_automobil);
-  var archiveAauto = archiver('zip', {
+  var archiveAuto = archiver('zip', {
     zlib: { level: 9 } 
   });
   archiveAuto.pipe(outputAuto);
