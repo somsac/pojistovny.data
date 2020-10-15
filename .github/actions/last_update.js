@@ -14,9 +14,13 @@ fs.readFile('main/data.json', (err, data) => {
   });
   archiveAll.pipe(outputAll);
 
+  var logos = [];
   for (index in pojistovny.insurers) {
     var pojistovna = pojistovny.insurers[index];
-    archive.file('main/logo/' + pojistovna.logo, { name: pojistovna.logo });
+    if (logos[pojistovna.logo] != 1) {
+      archive.file('main/logo/' + pojistovna.logo, { name: pojistovna.logo });
+      logos[pojistovna.logo] = 1;
+    }
   //  console.log(pojistovna.logo);
   }
 
