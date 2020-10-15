@@ -18,7 +18,7 @@ fs.readFile('main/data.json', (err, data) => {
   for (index in pojistovny.insurers) {
     var pojistovna = pojistovny.insurers[index];
     if (logos[pojistovna.logo] != 1) {
-      archive.file('main/logo/' + pojistovna.logo, { name: pojistovna.logo });
+      archiveAll.file('main/logo/' + pojistovna.logo, { name: pojistovna.logo });
       logos[pojistovna.logo] = 1;
     }
   //  console.log(pojistovna.logo);
