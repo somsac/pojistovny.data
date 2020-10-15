@@ -2,12 +2,6 @@ var fs = require('fs');
 var date = new Date();
 const archiver = require('archiver');
 
-
-
-
-archive.file('main/logo/aegon.png', { name: 'aegon.png' });
-
-
 fs.readFile('main/data.json', (err, data) => {
   let pojistovny = JSON.parse(data);
   let zip_name_all = pojistovny.logos_zip_file_all;
